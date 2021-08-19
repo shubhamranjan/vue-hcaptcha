@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <hr />
-    <button @click="recaptcha">Execute recaptcha</button>
+    <button @click="hcaptcha">Execute hcaptcha</button>
     <div id='hcaptcha-sample-container'></div>
   </div>
 </template>
@@ -16,8 +16,8 @@ export default defineComponent({
     msg: String,
   },
   methods: {
-    async recaptcha () {
-      console.log('recaptcha clicked')
+    async hcaptcha () {
+      console.log('hcaptcha clicked')
       
       await this.$hcaptchaLoaded()
 
