@@ -13,6 +13,7 @@ declare class hCaptchaInstance {
     reportapi?: string;
     assethost?: string;
     imghost?: string;
+    onload?: string;
 }
 
 export default hCaptchaInstance;

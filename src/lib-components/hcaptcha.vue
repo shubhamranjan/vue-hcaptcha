@@ -65,7 +65,7 @@ export default /*#__PURE__*/ defineComponent({
     imghost: {
       type: String,
       default: undefined,
-    },
+    }
   },
   emits: [
     "error",
@@ -83,8 +83,8 @@ export default /*#__PURE__*/ defineComponent({
     let hcaptcha: any | null = null;
     let hcaptchaContainer: any | null = ref(null);
 
-    onMounted(() => {
-      loadApiEndpointIfNotAlready(props);
+    onMounted(async () => {
+      await loadApiEndpointIfNotAlready(props);
     });
 
     onUnmounted(() => {

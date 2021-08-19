@@ -6,8 +6,6 @@ import { IhCaptchaInstance } from './interface/IhCaptchaInstance'
  */
  export const SCRIPT_ID: string = 'hcaptcha-api-script-id';
 
- const HCAPTCHA_LOAD_FN_NAME : string = '_hcaptchaOnLoad';
- 
  /**
   * Async hcaptcha api.js loader.
   *
@@ -51,7 +49,7 @@ import { IhCaptchaInstance } from './interface/IhCaptchaInstance'
  export function getScriptSrc(config : hCaptchaInstance) {
      let scriptSrc = config.apiEndpoint;
      scriptSrc = addQueryParamIfDefined(scriptSrc, 'render', 'explicit');
-     scriptSrc = addQueryParamIfDefined(scriptSrc, 'onload', HCAPTCHA_LOAD_FN_NAME);
+     scriptSrc = addQueryParamIfDefined(scriptSrc, 'onload', config.onload);
      scriptSrc = addQueryParamIfDefined(scriptSrc, 'recaptchacompat', config.reCaptchaCompat === false ? 'off' : 'on');
      scriptSrc = addQueryParamIfDefined(scriptSrc, 'hl', config.language);
      scriptSrc = addQueryParamIfDefined(scriptSrc, 'sentry', config.sentry);
