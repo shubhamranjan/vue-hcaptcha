@@ -7,7 +7,7 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
-    "@shubhamranjan/vue-hcaptcha": "^0.0.1",
+    "@shubhamranjan/vue-hcaptcha": "^0.0.2",
     "vue": "^3.0.0"
   },
   "devDependencies": {

@@ -2,8 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <hr />
-    <button @click="hcaptcha">Execute hcaptcha</button>
-    <div id='hcaptcha-sample-container'></div>
+    <button @click="hcaptcha">Execute hcaptcha via options api</button>
   </div>
 </template>
 
@@ -11,7 +10,7 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'HelloWorld',
+  name: 'Options',
   props: {
     msg: String,
   },

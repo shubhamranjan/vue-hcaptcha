@@ -95,10 +95,10 @@
   resolved "https://registry.yarnpkg.com/@shubhamranjan/hcaptcha/-/hcaptcha-0.0.1.tgz#d6b995b9e4105e6cb79b2267a26ffaed991a44da"
   integrity sha512-d6Uh64PxkJuDWrjnyGKAS/LXhKRVcNgTvmZX1EdMLkWt2R4mNz15bmC7o2CaNp3rnYe/VH+tvK8CpqrGkL6goA==
 
-"@shubhamranjan/vue-hcaptcha@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@shubhamranjan/vue-hcaptcha/-/vue-hcaptcha-0.0.1.tgz#6150e2dddb9fee88e6715bb5c49ce81c865c8de8"
-  integrity sha512-THjPn3z01GB266Nv7Umq2tI08C/MXDEajoeICaT170QMfH4hcKHkZT1s6alB7skW8CNB74fIyVoGUlPwpsvZSA==
+"@shubhamranjan/vue-hcaptcha@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@shubhamranjan/vue-hcaptcha/-/vue-hcaptcha-0.0.2.tgz#82fb62d3b9935a499aaeb708de530612f14e9824"
+  integrity sha512-hS9whW7hElj7neENJKlqIXg963Fs91goM+CkuPT7uNYvMHwFKCp2wWwBgzERu9rUvCWSmhZXV70dCjCfVq/G1w==
   dependencies:
     "@shubhamranjan/hcaptcha" "^0.0.1"
 

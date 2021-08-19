@@ -45,8 +45,8 @@ export const VuehCaptcha = {
   }
 }
 
-export function usehCaptcha (): IhCaptchaComposition | undefined {
-  return inject(VuehCaptchaInjectKey)
+export function usehCaptcha (): IhCaptchaComposition {
+  return inject(VuehCaptchaInjectKey) as IhCaptchaComposition
 }
 
 async function initializehCaptcha (options: IhCaptchaOptions): Promise<HCaptchaInstance> {

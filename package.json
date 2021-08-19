@@ -1,7 +1,16 @@
 {
   "name": "@shubhamranjan/vue-hcaptcha",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "hCaptcha library for vuejs 3+",
+  "license": "MIT",
+  "author": "Shubham Ranjan <contact@shubhamranjan.dev>",
+  "bugs": {
+    "url": "https://github.com/shubhamranjan/vue-hcaptcha/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shubhamranjan/vue-hcaptcha"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
