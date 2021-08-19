@@ -1,8 +1,9 @@
-import { load as loadReCaptcha, HCaptchaInstance } from '../../hcaptcha/src'
+import { load as loadHCaptcha, HCaptchaInstance } from '../../hcaptcha/src'
 import { App, Ref, ref, inject, InjectionKey } from 'vue'
 import { IhCaptchaOptions } from './interface/IhCaptchaOptions'
+import { IhCaptchaComposition } from './interface/IhCaptchaComposition'
 
-const VueReCaptchaInjectKey: InjectionKey<IReCaptchaComposition> = Symbol('VueReCaptchaInjectKey')
+const VuehCaptchaInjectKey: InjectionKey<IhCaptchaComposition> = Symbol('VuehCaptchaInjectKey')
 
 interface IGlobalConfig {
   loadedWaiters: Array<({resolve: (resolve: boolean) => void, reject: (reject: Error) => void})>
@@ -13,19 +14,19 @@ const globalConfig: IGlobalConfig = {
   error: null
 }
 
-export const VueReCaptcha = {
-  install (app: App, options: IhCaptchaOptions) {
+export const VuehCaptcha = {
+  install (app: App, options: IhCaptchaOptions) : void {
     const isLoaded = ref(false)
     const instance: Ref<HCaptchaInstance | undefined> = ref(undefined)
 
-    app.config.globalProperties.$recaptchaLoaded = recaptchaLoaded(isLoaded)
+    app.config.globalProperties.$hcaptchaLoaded = hcaptchaLoaded(isLoaded)
 
-    initializeReCaptcha(options).then((wrapper) => {
+    initializehCaptcha(options).then((wrapper) => {
       isLoaded.value = true
       instance.value = wrapper
 
-      app.config.globalProperties.$recaptcha = recaptcha(instance)
-      app.config.globalProperties.$recaptchaInstance = instance
+      app.config.globalProperties.$hcaptcha = hcaptcha(instance)
+      app.config.globalProperties.$hcaptchaInstance = instance
 
       globalConfig.loadedWaiters.forEach((v) => v.resolve(true))
     }).catch((error) => {
@@ -33,24 +34,24 @@ export const VueReCaptcha = {
       globalConfig.loadedWaiters.forEach((v) => v.reject(error))
     })
 
-    app.provide(VueReCaptchaInjectKey, {
+    app.provide(VuehCaptchaInjectKey, {
       instance,
       isLoaded,
-      executeRecaptcha: recaptcha(instance),
-      recaptchaLoaded: recaptchaLoaded(isLoaded)
+      executehcaptcha: hcaptcha(instance),
+      hcaptchaLoaded: hcaptchaLoaded(isLoaded)
     })
   }
 }
 
-export function useReCaptcha (): IReCaptchaComposition | undefined {
-  return inject(VueReCaptchaInjectKey)
+export function usehCaptcha (): IhCaptchaComposition | undefined {
+  return inject(VuehCaptchaInjectKey)
 }
 
-async function initializeReCaptcha (options: IhCaptchaOptions): Promise<HCaptchaInstance> {
-  return await loadReCaptcha(options.siteKey, options.loaderOptions)
+async function initializehCaptcha (options: IhCaptchaOptions): Promise<HCaptchaInstance> {
+  return await loadHCaptcha(options.siteKey, options.loaderOptions)
 }
 
-function recaptchaLoaded (isLoaded: Ref<boolean>) {
+function hcaptchaLoaded (isLoaded: Ref<boolean>) {
   // eslint-disable-next-line @typescript-eslint/promise-function-async
   return () => new Promise<boolean>((resolve, reject) => {
     if (globalConfig.error !== null) {
@@ -63,15 +64,9 @@ function recaptchaLoaded (isLoaded: Ref<boolean>) {
   })
 }
 
-function recaptcha (instance: Ref<HCaptchaInstance | undefined>) {
+function hcaptcha (instance: Ref<HCaptchaInstance | undefined>) {
   return async (action: string): Promise<string | undefined> => {
     return await instance.value?.execute(action)
   }
 }
 
-export interface IReCaptchaComposition {
-  isLoaded: Ref<boolean>
-  instance: Ref<HCaptchaInstance | undefined>
-  executeRecaptcha: (action: string) => Promise<string>
-  recaptchaLoaded: () => Promise<boolean>
-}
