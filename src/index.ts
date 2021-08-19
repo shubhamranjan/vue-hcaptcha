@@ -1,4 +1,4 @@
-import { load as loadHCaptcha, HCaptchaInstance } from '../../hcaptcha/src'
+import { load as loadHCaptcha, HCaptchaInstance } from '@shubhamranjan/hcaptcha'
 import { App, Ref, ref, inject, InjectionKey } from 'vue'
 import { IhCaptchaOptions } from './interface/IhCaptchaOptions'
 import { IhCaptchaComposition } from './interface/IhCaptchaComposition'
@@ -25,7 +25,8 @@ export const VuehCaptcha = {
       isLoaded.value = true
       instance.value = wrapper
 
-      app.config.globalProperties.$hcaptcha = hcaptcha(instance)
+      app.config.globalProperties.$executehcaptcha = executehcaptcha(instance)
+      app.config.globalProperties.$processhcaptcha = processhcaptcha(instance)
       app.config.globalProperties.$hcaptchaInstance = instance
 
       globalConfig.loadedWaiters.forEach((v) => v.resolve(true))
@@ -37,8 +38,9 @@ export const VuehCaptcha = {
     app.provide(VuehCaptchaInjectKey, {
       instance,
       isLoaded,
-      executehcaptcha: hcaptcha(instance),
-      hcaptchaLoaded: hcaptchaLoaded(isLoaded)
+      executehcaptcha: executehcaptcha(instance),
+      hcaptchaLoaded: hcaptchaLoaded(isLoaded),
+      processhcaptcha: processhcaptcha(instance)
     })
   }
 }
@@ -64,9 +66,15 @@ function hcaptchaLoaded (isLoaded: Ref<boolean>) {
   })
 }
 
-function hcaptcha (instance: Ref<HCaptchaInstance | undefined>) {
-  return async (action: string): Promise<string | undefined> => {
-    return await instance.value?.execute(action)
+function executehcaptcha (instance: Ref<HCaptchaInstance | undefined>) {
+  return async (): Promise<void | undefined> => {
+    return await instance.value?.execute()
+  }
+}
+
+function processhcaptcha (instance: Ref<HCaptchaInstance | undefined>) {
+  return async (): Promise<string | undefined> => {
+    return await instance.value?.getResponse()
   }
 }
 

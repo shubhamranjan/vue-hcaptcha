@@ -1,4 +1,4 @@
-import { IhCaptchaLoaderOptions } from '../../../hcaptcha/src/interface/IhCaptchaLoaderOptions'
+import { IhCaptchaLoaderOptions } from '@shubhamranjan/hcaptcha/dist/interface/IhCaptchaLoaderOptions'
 
 export interface IhCaptchaOptions {
   siteKey: string

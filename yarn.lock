@@ -156,6 +156,11 @@
     "@nodelib/fs.scandir" "2.1.5"
     "fastq" "^1.6.0"
 
+"@shubhamranjan/hcaptcha@^0.0.1":
+  "integrity" "sha512-d6Uh64PxkJuDWrjnyGKAS/LXhKRVcNgTvmZX1EdMLkWt2R4mNz15bmC7o2CaNp3rnYe/VH+tvK8CpqrGkL6goA=="
+  "resolved" "https://registry.npmjs.org/@shubhamranjan/hcaptcha/-/hcaptcha-0.0.1.tgz"
+  "version" "0.0.1"
+
 "@types/json-schema@^7.0.7":
   "integrity" "sha512-qcUXuemtEu+E5wZSJHNxUXeCZhAfXKQ41D+duX+VYPde7xyEVZci+/oXKJL13tnRs9lR2pr4fod59GT6/X1/yQ=="
   "resolved" "https://registry.npmjs.org/@types/json-schema/-/json-schema-7.0.9.tgz"
@@ -2286,7 +2291,7 @@
     "spdx-correct" "^3.0.0"
     "spdx-expression-parse" "^3.0.0"
 
-"vue@^3.2.2":
+"vue@^3.0.0":
   "integrity" "sha512-rNCFmoewm8IwmTK0nj3ysKq53iRpNEFKoBJ4inar6tIh7Oj7juubS39RI8UI+VE7x+Cs2z6PBsadtZu7z2qppg=="
   "resolved" "https://registry.npmjs.org/vue/-/vue-3.2.4.tgz"
   "version" "3.2.4"
