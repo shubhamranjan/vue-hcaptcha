@@ -1,7 +1,8 @@
 # hCaptcha
 A hCaptcha library for vuejs 3+.
 
-
+[![npm](https://img.shields.io/npm/v/@shubhamranjan/vue-hcaptcha.svg)](https://www.npmjs.com/package/@shubhamranjan/vue-hcaptcha)
+[![npm type definitions](https://img.shields.io/npm/types/@shubhamranjan/vue-hcaptcha.svg)](https://www.npmjs.com/package/@shubhamranjan/vue-hcaptcha)
 
 ## Credits: 
 
