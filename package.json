@@ -1,0 +1,21 @@
+{
+  "name": "vue-hcaptcha",
+  "version": "0.0.1",
+  "description": "hCaptcha library for vue 3+",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.29.2",
+    "@typescript-eslint/parser": "^4.29.2",
+    "eslint": "^7.32.0",
+    "eslint-config-recommended": "^4.1.0",
+    "eslint-plugin-import": "^2.24.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "vue": "^3.2.2",
+    "typescript": "^4.3.5"
+  }
+}
