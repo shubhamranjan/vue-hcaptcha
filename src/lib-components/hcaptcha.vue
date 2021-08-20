@@ -65,7 +65,7 @@ export default /*#__PURE__*/ defineComponent({
     imghost: {
       type: String,
       default: undefined,
-    }
+    },
   },
   emits: [
     "error",
@@ -89,11 +89,9 @@ export default /*#__PURE__*/ defineComponent({
     });
 
     onUnmounted(() => {
-      if (widgetId) {
-        hcaptcha.then(() => {
-          hcaptcha.reset(widgetId);
-          hcaptcha.remove(widgetId);
-        });
+      if (widgetId && hcaptcha) {
+        hcaptcha.reset(widgetId);
+        hcaptcha.remove(widgetId);
       }
     });
 
