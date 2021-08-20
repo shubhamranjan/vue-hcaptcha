@@ -90,7 +90,6 @@ export default /*#__PURE__*/ defineComponent({
 
     onUnmounted(() => {
       if (widgetId && hcaptcha) {
-        hcaptcha.reset(widgetId);
         hcaptcha.remove(widgetId);
       }
     });
