@@ -85,6 +85,7 @@ export default /*#__PURE__*/ defineComponent({
 
     onMounted(async () => {
       await loadApiEndpointIfNotAlready(props);
+      onApiLoaded();
     });
 
     onUnmounted(() => {
