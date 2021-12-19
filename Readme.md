@@ -1,9 +1,11 @@
 # hCaptcha
 
-# NOTE
-This library was created to meet urgent needs during a time when the official library did not support vue 3. Now that it does support, this project is deprecated.
+# Note
+~~This library was created to meet urgent needs during a time when the official library did not support vue 3. Now that it does support, this project is deprecated.~~ 
 
-Please consider using the [official lib](https://www.npmjs.com/package/@hcaptcha/vue3-hcaptcha) instead
+~~Please consider using the [official lib](https://www.npmjs.com/package/@hcaptcha/vue3-hcaptcha) instead~~
+
+This library will be maintained and supported until the official library has proper support for vue3 + TS
 
 <hr>
 A hCaptcha library for vuejs 3+.
