@@ -1,6 +1,6 @@
 {
   "name": "@shubhamranjan/vue-hcaptcha",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "hCaptcha library for web",
   "license": "MIT",
   "author": "Shubham Ranjan <contact@shubhamranjan.dev>",
