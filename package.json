@@ -2,66 +2,66 @@
   "name": "@shubhamranjan/vue-hcaptcha",
   "version": "0.2.1",
   "description": "hCaptcha library for web",
-  "license": "MIT",
   "author": "Shubham Ranjan <contact@shubhamranjan.dev>",
-  "bugs": {
-    "url": "https://github.com/shubhamranjan/vue-hcaptcha/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/shubhamranjan/vue-hcaptcha"
+  "scripts": {
+    "serve": "vue-cli-service serve dev/serve.ts",
+    "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
+    "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
+    "build:ssr": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",
+    "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife",
+    "postbuild": "rimraf ./dist/types/dev ./dist/types/src/entry.d.ts",
+    "prebuild": "rimraf ./dist"
   },
   "main": "dist/vue-hcaptcha.ssr.js",
-  "browser": "dist/vue-hcaptcha.esm.js",
   "module": "dist/vue-hcaptcha.esm.js",
+  "browser": "dist/vue-hcaptcha.esm.js",
   "unpkg": "dist/vue-hcaptcha.min.js",
-  "types": "dist/types/src/entry.esm.d.ts",
   "files": [
     "dist/*",
     "src/**/*.vue"
   ],
-  "sideEffects": false,
-  "scripts": {
-    "serve": "vue-cli-service serve dev/serve.ts",
-    "prebuild": "rimraf ./dist",
-    "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
-    "build:ssr": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",
-    "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
-    "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife",
-    "postbuild": "rimraf ./dist/types/dev ./dist/types/src/entry.d.ts"
-  },
   "dependencies": {},
   "devDependencies": {
-    "@babel/core": "^7.15.5",
-    "@babel/preset-env": "^7.15.6",
-    "@babel/preset-typescript": "^7.14.5",
-    "@rollup/plugin-alias": "^3.1.2",
+    "@babel/core": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
+    "@babel/preset-typescript": "^7.16.5",
+    "@rollup/plugin-alias": "^3.1.8",
     "@rollup/plugin-babel": "^5.3.0",
-    "@rollup/plugin-commonjs": "^21.0.0",
-    "@rollup/plugin-node-resolve": "^13.0.5",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.1.1",
     "@rollup/plugin-replace": "^3.0.0",
-    "@vue/cli-plugin-babel": "^4.5.13",
-    "@vue/cli-plugin-typescript": "^4.5.13",
-    "@vue/cli-service": "^4.5.13",
-    "@vue/compiler-sfc": "^3.2.19",
+    "@vue/cli-plugin-babel": "~4.5.15",
+    "@vue/cli-plugin-typescript": "~4.5.15",
+    "@vue/cli-service": "~4.5.15",
+    "@vue/compiler-sfc": "^3.2.26",
     "@zerollup/ts-transform-paths": "^1.7.18",
     "cross-env": "^7.0.3",
     "minimist": "^1.2.5",
-    "postcss": "^8.3.8",
+    "postcss": "^8.4.5",
     "rimraf": "^3.0.2",
-    "rollup": "^2.58.0",
-    "rollup-plugin-postcss": "^4.0.0",
+    "rollup": "^2.61.1",
+    "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-typescript2": "^0.30.0",
+    "rollup-plugin-typescript2": "^0.31.1",
     "rollup-plugin-vue": "^6.0.0",
-    "ttypescript": "^1.5.12",
-    "typescript": "^4.4.3",
-    "vue": "^3.2.19"
+    "ttypescript": "^1.5.13",
+    "typescript": "^4.5.4",
+    "vue": "^3.2.26"
   },
   "peerDependencies": {
     "vue": "^3.0.5"
   },
+  "bugs": {
+    "url": "https://github.com/shubhamranjan/vue-hcaptcha/issues"
+  },
   "engines": {
     "node": ">=12"
-  }
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shubhamranjan/vue-hcaptcha"
+  },
+  "sideEffects": false,
+  "types": "dist/types/src/entry.esm.d.ts"
 }
